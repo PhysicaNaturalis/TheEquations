@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.4.0/remixicon.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
+
+
+
+<div class="login container grid active" id="loginAccessRegister">
+ <div class = "login__access">
+    <h1 class="login__title">Login to your account.</h1>
+
+    <div class="login__area">
+        <form action="" class="login__form">
+            <div class="login__content">
+                <div class="login__box">
+                    <input type="email" id = "" required placeholder = "" class="login__input">
+                    <label for="email" class="login__label">Email</label>
+
+                    <i class="ri-mail-fill login__icon"></i>
+                </div>
+                <div class="login__box">
+                    <input type="password" id = "password" required placeholder = "" class="login__input">
+                    <label for="password" class="login__label">Password</label>
+
+                    <i class="ri-eye-off-fill login__icon login__password" id ="loginPassword"></i>
+                </div>
+            </div>
+            <a href="#" class="login__forget">Forgot your password?</a>
+            <button type="submit" class="login__button">Login</button>
+        </form>
+
+    
+        <div class="login__social">
+            <p class="login__social-title">Or login with</p>
+            <div class="login__social-links">
+
+                <a href="#" class="login__social-link">
+                   <img src="file:///C:/Users/GayaT/Downloads/google.svg" alt="image" class="login__icon-images">
+                </a>
+                <a href="#" class="login__social-link">
+                    <img src="file:///C:/Users/GayaT/Downloads/facebook.svg" alt="image" class="login__icon-images">
+                </a>
+                <a href="#" class="login__social-link">
+                    <img src="file:///C:/Users/GayaT/Downloads/twitter.svg" alt="image" class="login__icon-images">
+                </a>
+
+            </div>
+        </div>
+
+
+        <p class="login__switch">
+            Don't have an account?
+            <button id="loginButtonRegister">Create Account</button>
+        </p>
+    </div>
+ </div>
+
+
+<div class="login__register">
+    <h1 class="login__title">Create new account.</h1>
+    <div class="login__area">
+        <form action="" class="login__form">
+            <div class="login__container grid">
+                <div class="login__group grid">
+
+                    <div class="login__box">
+                        <input type="text" class="login__input" id="names" required placeholder=" ">
+                       <label for="names" class="login__label">Names</label>
+                       <i class="ri-id-card-fill login__icon"></i>
+                    </div>
+
+                    <div class="login__box">
+                        <input type="text" class="login__input" id="surnames" required placeholder=" ">
+                       <label for="surnames" class="login__label">Surnames</label>
+                       <i class="ri-id-card-fill login__icon"></i>
+                    </div>
+
+                    <div class="login__box">
+                        <input type="email" class="login__input" id="emailCreate" required placeholder=" ">
+                       <label for="emailCreate" class="login__label">Email</label>
+                        <i class="ri-mail-fill login__icon"></i>
+                    </div>
+
+                    <div class="login__box">
+                        <input type="password" class="login__input" id="passwordCreate" required placeholder=" ">
+                       <label for="passwordCreate" class="login__label">Password</label>
+                        <i class="ri-eye-off-fill login__icon login__password" id="loginPasswordCreate"></i>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="login__button">Create account</button>
+
+        </form>
+        <p class="login__switch">
+            Already have an account?
+            <button id="loginButtonAccess">Log In</button>
+        </p>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+</html>
