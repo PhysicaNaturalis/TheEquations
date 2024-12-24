@@ -73,7 +73,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     const passwordCreate = document.getElementById('passwordCreate').value;
 
     // Send registration data to Google Apps Script web app (API endpoint)
-    fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwF1Q55OsCscz_eHRryLzqrPhfcwn8kvzd4AFdnwsE/dev', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -109,7 +109,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     const password = document.getElementById('password').value;
 
     // Send login data to Google Apps Script web app (API endpoint)
-    fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwF1Q55OsCscz_eHRryLzqrPhfcwn8kvzd4AFdnwsE/dev', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
