@@ -64,46 +64,76 @@ document.getElementById('CreatePassword').addEventListener('input', function() {
 
 
 /*TRY it*/
-document.getElementById('registerForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const name = document.getElementById('name').value;
+    const names = document.getElementById('names').value;
+    const surnames = document.getElementById('surnames').value;
+    const emailCreate = document.getElementById('emailCreate').value;
+    const passwordCreate = document.getElementById('passwordCreate').value;
 
-    fetch('https://script.google.com/macros/s/AKfycbwF1Q55OsCscz_eHRryLzqrPhfcwn8kvzd4AFdnwsE/dev', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'register', email, password, name })
-    })
-    .then(response => response.json())
-    .then(data => alert(data.message))
-    .catch(error => console.error('Error:', error));
-  });
-
-  // Login
-  document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-
-    fetch('https://script.google.com/macros/s/AKfycbwF1Q55OsCscz_eHRryLzqrPhfcwn8kvzd4AFdnwsE/dev', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'login', email, password })
+    // Send registration data to Google Apps Script web app (API endpoint)
+    fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            action: 'register',
+            names: names,
+            surnames: surnames,
+            email: emailCreate,
+            password: passwordCreate
+        })
     })
     .then(response => response.json())
     .then(data => {
-      if (data.success) {
-        alert('Login successful! Welcome, ' + data.name);
-      } else {
-        alert(data.message);
-      }
+        if (data.success) {
+            alert('Account created successfully!');
+            // Redirect or handle successful registration
+        } else {
+            alert('Registration failed: ' + data.message);
+        }
     })
-    .catch(error => console.error('Error:', error));
-  });
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+});
 
+  // Login
+ document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Send login data to Google Apps Script web app (API endpoint)
+    fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            action: 'login',
+            email: email,
+            password: password
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Login successful!');
+            // Redirect or handle successful login
+        } else {
+            alert('Login failed: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+});
 
 
 function hashPassword(password) {
