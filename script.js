@@ -1,4 +1,4 @@
-const scriptUrl = 'https://script.google.com/macros/s/AKfycbwF1Q55OsCscz_eHRryLzqrPhfcwn8kvzd4AFdnwsE/dev'
+const scriptUrl = 'https://script.google.com/macros/s/AKfycbw-iIC78tRcFuuQsBy8kVSSG4V8a3-gQXJ8FCNdyoat05LPQ4F-6tqNeDk6ErGOAFbd/exec'
     // Password visibility toggle
 const passwordInput = document.getElementById('password');
 const toggleButton = document.getElementById('loginPassword');
