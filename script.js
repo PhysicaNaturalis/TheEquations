@@ -36,3 +36,14 @@ buttonRegister.addEventListener('click', () => {
 buttonAccess.addEventListener('click', () => {
     loginAccessRegister.classList.remove('active')
 })
+
+document.getElementById('password').addEventListener('input', function() {
+    const password = this.value;
+    const feedback = document.getElementById('password-feedback');
+    const minLength = 8;
+    if (password.length < minLength) {
+      feedback.textContent = 'Password must be at least 8 characters.';
+    } else {
+      feedback.textContent = 'Password is strong enough.';
+    }
+  });
